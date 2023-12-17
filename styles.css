@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.area-jogador {
+  width: 25%;
+  height: 100vh;
+  background-color: rosybrown;
+}
+
+.tabuleiro {
+  width: 50%;
+  height: 100vh;
+  background-color: royalblue;
+}
+
+.area-cpu {
+  width: 25%;
+  height: 100vh;
+  background-color: yellow;
+}
+
+body {
+  margin: 0!important;
+}
+
+.flex-jogo {
+  display: flex;
+}

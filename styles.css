@@ -4,21 +4,21 @@
 }
 
 .area-jogador {
-  width: 25%;
+  width: 35%;
   height: 100vh;
-  background-color: rosybrown;
+  background-color: #150050;
 }
 
 .tabuleiro {
-  width: 50%;
+  width: 30%;
   height: 100vh;
-  background-color: royalblue;
+  background-color: #3F0071;
 }
 
 .area-cpu {
-  width: 25%;
+  width: 35%;
   height: 100vh;
-  background-color: yellow;
+  background-color: #150050;
 }
 
 body {
@@ -27,4 +27,16 @@ body {
 
 .flex-jogo {
   display: flex;
+}
+
+.avatar-jogador, .avatar-cpu {
+  height: 60%;
+}
+
+.tabuleiro-jogador {
+  height: 40%;
+}
+
+.placar-jogo {
+  height: 20%;
 }

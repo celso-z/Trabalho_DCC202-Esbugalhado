@@ -6,6 +6,47 @@ var tabelaJogador = [ [0,0,0], [0,0,0], [0,0,0]];
 var tabelaCPU = [[0,0,0], [0,0,0], [0,0,0]];
 let pontosJogador = 0, pontosCPU = 0;
 
+const isZero = (element) => element == 0;
+
+export function setTabelaJogador(linha, coluna,valor){
+    tabelaJogador[linha][coluna] = valor;
+}
+
+export function setTabelaCPU(linha, coluna,valor){
+    tabelaCPU[linha][coluna] = valor;
+}
+
+export function quemGanhou(){
+    if(pontosJogador > pontosCPU) return "JOGADOR";
+    else return "CPU";
+}
+
+export function verificaFimJogador(){
+    for(let i = 0; i < 3; i++){
+        if(tabelaJogador[i].includes(0)) return false;
+    }
+    return true;
+}
+
+export function verificaFimCPU(){
+    for(let i = 0; i < 3; i++){
+        if(tabelaCPU[i].includes(0)) return false;
+    }
+    return true;
+}
+
+export function jogadaValidaCPU(){
+    let coordenadas = [];
+    for(let linha = 0; linha < 3; linha++){
+        let coluna = tabelaCPU[0].findIndex(isZero);
+        if(coluna != -1){
+            coordenadas.push(linha);
+            coordenadas.push(coluna);
+            return coordenadas;
+        }
+    }
+}
+
 export function calculaPontosColuna(coluna){
     let result = 0;
     let duplicidades = {};
@@ -18,10 +59,26 @@ export function calculaPontosColuna(coluna){
 
 export function atualizaTabuleiro(){
     let linhasJogador = tabuleiroFromTabela(tabelaJogador);
+    while (tabuleiroJogador.firstChild) {
+        tabuleiroJogador.removeChild(tabuleiroJogador.firstChild);
+    }
     linhasJogador.forEach(function(x) {tabuleiroJogador.appendChild(x)});
     let linhasCPU = tabuleiroFromTabela(tabelaCPU);
+    while (tabuleiroCPU.firstChild) {
+        tabuleiroCPU.removeChild(tabuleiroCPU.firstChild);
+    }
     linhasCPU.forEach(function(x) {tabuleiroCPU.appendChild(x)});
     atualizaPlacar();
+}
+
+export function getColunaValidaJogador(coluna){
+    let index = coluna - 1;
+    if(index > 2 || index < 0) return -1;
+    let colunaDesejada = getColuna(tabelaJogador, index);
+    for(let i = 0; i < 3; i++){
+        if(colunaDesejada[i] == 0) return i;
+    }
+    return -1;
 }
 
 function getColuna(tabela, indexColuna){

@@ -17,7 +17,7 @@
             </div>
             <div class="tabuleiro">
                 <div class="tabuleiro-jogador">
-                    <table id="tabuleiro1">
+                    <table id="tabuleiro1" style="table-layout:fixed;">
                         <tr>
                             <th></th>
                             <th></th>
@@ -25,9 +25,11 @@
                         </tr>
                     </table>
                 </div>
-                <div class="placar-jogo">placar</div>
+                <div class="placar-jogo">
+                    <h1 id="placar"></h1>
+                </div>
                 <div class="tabuleiro-cpu">
-                    <table id="tabuleiro2">
+                    <table id="tabuleiro2" style="table-layout:fixed;">
                         <tr>
                             <th></th>
                             <th></th>
@@ -42,6 +44,6 @@
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>

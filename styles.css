@@ -9,6 +9,20 @@
   background-color: #150050;
 }
 
+table{
+  height: 100%;
+  width: 100%;
+}
+
+td {
+  background-color: #150050;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
 .tabuleiro {
   width: 30%;
   height: 100vh;
@@ -33,10 +47,26 @@ body {
   height: 60%;
 }
 
-.tabuleiro-jogador {
+.tabuleiro-jogador, .tabuleiro-cpu {
   height: 40%;
 }
 
 .placar-jogo {
+  background-color: #000000;
+  text-align: center;
+  color: white;
   height: 20%;
+  align-items: center;
+}
+
+#tabuleiro1, #tabuleiro2 {
+  margin: auto;
+  padding: 5%;
+  height: 100%;
+  width: 80%;
+}
+
+#placar {
+  line-height: 51px;
+  vertical-align: middle;
 }
